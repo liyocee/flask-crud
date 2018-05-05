@@ -20,8 +20,12 @@ def create_app(config_name):
     # load all models
     from app import models
 
-    @app.route("/")
-    def index():
-        return "hello world"
+    # register blueprints as individual apps
+
+    from .admin import admin as admin_app
+    app.register_blueprint(admin_app, url_prefix='/admin')
+
+    from .home import home as home_app
+    app.register_blueprint(home_app)
 
     return app
