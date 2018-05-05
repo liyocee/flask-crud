@@ -10,3 +10,13 @@ It leverages:
 
 
 It also demonstrates how to use a scalable folder structure for flask based apps
+
+
+# Setup
+
+- Set `env` variable:
+    - `export FLASK_APP=run.py`
+    - `export ENV=dev`
+- Create migration repository: `flask db init`
+- Create first migration: `flask db migrate`
+- Apply db migration `flask db upgrade`
