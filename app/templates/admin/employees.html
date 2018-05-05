@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Employees{% endblock %}
+{% block body %}
+<div class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="intro-message">
+                    <h1>Emp MX Admin</h1>
+                    <h3>Employees Added</h3>
+                    <hr class="intro-divider">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr class="text-center">
+                            <th class="text-center">First Name</th>
+                            <th class="text-center">Last Name</th>
+                            <th class="text-center">Email</th>
+                            <th class="text-center">Department</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for employee in employees %}
+                        <tr>
+                            <td>{{ employee.first_name }}</td>
+                            <td>{{ employee.last_name }}</td>
+                            <td>{{ employee.email }}</td>
+                            <td>{{ employee.department.name }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

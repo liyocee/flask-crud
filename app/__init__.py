@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_bootstrap import Bootstrap
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
@@ -16,6 +17,9 @@ def create_app(config_name):
 
     # db migration
     migrate = Migrate(app=app, db=db)
+
+    # activate flask boostrap app
+    Bootstrap(app)
 
     # load all models
     from app import models

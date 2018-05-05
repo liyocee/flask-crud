@@ -19,7 +19,7 @@ class Employee(db.Model):
 
 class Department(db.Model):
     """
-    Creates a Deparment table
+    Creates a Department table
     """
     __tablename__ = 'departments'
     id = db.Column(db.Integer, primary_key=True)
